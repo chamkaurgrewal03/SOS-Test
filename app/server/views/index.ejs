@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html <%- metaHeader.htmlAttributes.toString() %>>
+  <head>
+
+    <!-- Custom Fonts -->
+    <link href="/assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="<%= styleSrc %>" type="text/css" media="screen" charset="utf-8">
+    <!-- jQuery -->
+    <script src="/assets/js/jquery.js"></script>
+    <script src="/assets/js/jquery.validate.min.js"></script>
+    <script src="/assets/js/additional-methods.min.js"></script>
+    <%- metaHeader.title.toString() %>
+    <%- metaHeader.base.toString() %>
+    <%- metaHeader.meta.toString() %>
+    <%- metaHeader.link.toString() %>
+    <%- metaHeader.script.toString() %>
+    <%- metaHeader.style.toString() %>
+  </head>
+  <body>
+    <div id="root"><%- html %></div>
+    <script type="text/javascript" charset="utf-8">
+      window.__REDUX_STATE__ = '<%= reduxState %>';
+    </script>
+
+    <% scriptSrcs.forEach(function(src){ %>
+      <script src="<%= src %>"></script>
+    <% }) %>
+
+  </body>
+</html>
